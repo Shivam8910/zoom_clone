@@ -39,17 +39,14 @@ const MobileNav = () => {
               alt="Yoom logo"
               className="max-sm:size-10"
             />
-            <p className="text-[26px] font-extrabold text-white max-sm:hidden">
-              Yoom
-            </p>
+            <p className="text-[26px] font-extrabold text-white">Yoom</p>
           </Link>
 
           <div className="flex h-[calc(100vh - 72px)] flex-col justify-between overflow-y-auto">
             <SheetClose asChild>
               <section className="flex h-hull flex-col gap-6 pt-16 text-white">
                 {sidebarLinks.map((link) => {
-                  const isActive =
-                    pathname === link.route || pathname.startsWith(link);
+                  const isActive = pathname === link.route;
 
                   return (
                     <SheetClose asChild key={link.route}>
@@ -67,9 +64,7 @@ const MobileNav = () => {
                           width={24}
                           height={24}
                         ></Image>
-                        <p className="text-lg font-semibold max-lg:hidden">
-                          {link.label}
-                        </p>
+                        <p className="text-lg font-semibold">{link.label}</p>
                       </Link>
                     </SheetClose>
                   );
